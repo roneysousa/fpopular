@@ -1,0 +1,23 @@
+unit udmPluspdv;
+
+interface
+
+uses
+  SysUtils, Classes;
+
+type
+  TdmPluspdv = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmPluspdv: TdmPluspdv;
+
+implementation
+
+{$R *.dfm}
+
+end.

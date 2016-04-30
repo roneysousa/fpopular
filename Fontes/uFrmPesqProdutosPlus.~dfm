@@ -1,0 +1,5 @@
+inherited FrmPesqProdutosPlus: TFrmPesqProdutosPlus
+  Caption = 'FrmPesqProdutosPlus'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

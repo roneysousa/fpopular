@@ -1,0 +1,49 @@
+program InfoGereciador;
+
+uses
+  Forms,
+  Windows,
+  Dialogs,
+  Controls,
+  SysUtils,
+  uInfoPrincipal in 'Fontes\uInfoPrincipal.pas' {FrmPrincipal},
+  uDM in 'Fontes\uDM.pas' {dmGerenciador: TDataModule},
+  uFuncoes in 'Fontes\uFuncoes.pas',
+  UrlMon in 'Fontes\UrlMon.pas',
+  uFrmCadModelo in 'Fontes\uFrmCadModelo.pas' {FrmCadastro},
+  wcrypt2 in 'Fontes\wcrypt2.pas',
+  uFrmCadUsuarios in 'Fontes\uFrmCadUsuarios.pas' {FrmCadUsuarios},
+  uFrmCadVendedores in 'Fontes\uFrmCadVendedores.pas' {FrmCadVendedores},
+  uFrmCadProdutos in 'Fontes\uFrmCadProdutos.pas' {FrmCadProdutos},
+  uFrmConfig in 'Fontes\uFrmConfig.pas' {FrmConfig},
+  uFrmPreSolicitacao in 'Fontes\uFrmPreSolicitacao.pas' {FrmPreSolicitacao},
+  uFrmPesquisaPadrao in 'Fontes\uFrmPesquisaPadrao.pas' {FrmPesquisaPadrao},
+  UFrmPesquisaProdutos in 'Fontes\UFrmPesquisaProdutos.pas' {FrmPesquisaProdutos},
+  uFrmPesquisaClientes in 'Fontes\uFrmPesquisaClientes.pas' {FrmPesquisaClientes},
+  uUsuario in 'Fontes\uUsuario.pas',
+  uFrmLogin in 'Fontes\uFrmLogin.pas' {FrmLogin},
+  uFrmAlteraSenha in 'Fontes\uFrmAlteraSenha.pas' {frmAlterarSenha},
+  ServicoSolicitacaoWS1 in 'Fontes\ServicoSolicitacaoWS1.pas',
+  uFPopular in 'Fontes\uFPopular.pas',
+  udmPluspdv in 'Fontes\udmPluspdv.pas' {dmPluspdv: TDataModule},
+  uFrmPesqProdutosPlus in 'Fontes\uFrmPesqProdutosPlus.pas' {FrmPesqProdutosPlus};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TdmGerenciador, dmGerenciador);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  frmLogin := TfrmLogin.Create(nil);
+  if frmLogin.ShowModal = mrOk then
+   begin
+        FreeAndNil(frmLogin);
+        Application.Run;
+   end
+   else
+   begin
+        FreeAndNil(dmGerenciador);
+        //
+        Application.Terminate;
+   End;
+end.

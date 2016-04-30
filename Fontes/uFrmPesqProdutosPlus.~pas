@@ -1,0 +1,26 @@
+unit uFrmPesqProdutosPlus;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, uFrmPesquisaPadrao, FMTBcd, DBClient, Provider, DB, SqlExpr,
+  Buttons, Grids, DBGrids, JvExDBGrids, JvDBGrid, JvDBUltimGrid, StdCtrls,
+  ExtCtrls;
+
+type
+  TFrmPesqProdutosPlus = class(TFrmPesquisaPadrao)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPesqProdutosPlus: TFrmPesqProdutosPlus;
+
+implementation
+
+{$R *.dfm}
+
+end.
